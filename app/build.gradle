@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
-//apply from: 'tinker-support.gradle'
+apply from: 'tinker-support.gradle'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
-
+    signingConfigs {
+        release {
+            keyAlias 'key0'
+            keyPassword 'paradise'
+            storeFile file('D:/Android/jks/zhj2019signed.jks')
+            storePassword 'paradise'
+        }
+    }
     defaultConfig {
         applicationId "com.yibao.buglydemo"
         minSdkVersion 23
